@@ -76,7 +76,7 @@ $(document).ready(function () {
 
 		_.each(businessInputs, function (value) {
 			if (value > 10000000) {
-				displayError('Come on, now you\'re just being silly. We\'re taking about sole traders and not companies remember.');
+				displayError('Come on, now you\'re just being silly. We\'re taking about sole traders remember.');
 			}
 		});
 
