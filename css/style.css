@@ -1,0 +1,58 @@
+html {
+	font-family: "Open Sans", "sans-serif";
+}
+
+body {
+	max-width: 900px;
+	margin: 0 auto 25px auto;
+}
+.outer-container {
+	margin: 10px;
+}
+
+textarea {
+	box-sizing: border-box;
+	width: 100%;
+	min-width: 300px;
+}
+
+input, textarea {
+	font-family: monospace;
+	font-size: 110%;
+
+	border: 1px solid #ccc;
+	padding: 3px;
+}
+
+td {
+	padding: 5px;
+}
+
+th {
+	padding: 5px 12px 5px 5px;
+}
+
+.invalid {
+	border: 2px solid red;
+}
+
+.bubble-container {
+	position: relative;
+}
+
+.callout {
+	border: 2px solid #dd8;
+	border-radius: 4px;
+	background-color: #ffd;
+
+	padding: 5px 10px;
+}
+
+.error-message {
+	border: 2px solid #d88;
+	border-radius: 4px;
+	background-color: #fdd;
+
+	padding: 5px 10px;
+}
+

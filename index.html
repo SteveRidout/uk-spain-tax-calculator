@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<meta http-equiv="Cache-Control" content="no-store" />
+
+		<title>Spanish Autonomo vs UK Sole Trader Tax Calculator</title>
+
+		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+		<meta name="description" content="Tax calculator for self employed people in Spain and the UK. Find out which country offers the lowest tax burden for your business."/>
+
+		<meta name="keywords" content="Spain, Spanish Tax, Autonomo Tax, UK Sole Trader Tax, UK Freelance Tax, VAT, IVA, IRPF, Income Tax, National Insurance, Social Security, Seguridad Social"/>
+		<meta name="author" content="Steve Ridout"/>
+
+		<script type="text/javascript" src="./external/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="./external/underscore-min.js"></script>
+		<script type="text/javascript" src="./src/taxCalc.js"></script>
+	</head>
+	<body>
+	<div class="outer-container">
+		<h1>UK Sole Trader vs Spanish Autonomo Tax Calculator</h1>
+		<p>An online calculator to compare the tax burden of self employed people in the UK and Spain.</p>
+
+		<div class="callout">
+			<b>Please Help!</b> I'm not an expert and would like your help to ensure everything is accurate, please <a href="mailto:steveridout@gmail.com">email me</a> if you spot any problems or points that need clarifying.<br>
+			<small>If you're comfortable with javascript, feel free to take a peek at the <a href="./src/taxCalc.js">source code</a></small>.
+		</div>
+
+		<div class="panel">
+			<h2>Enter Your Business Details Here</h2>
+
+			<table>
+				<tr>
+					<td><label>B2C Revenue (Including VAT *)</label></td>
+					<td>€</td>
+					<td><input type="text" name="b2c-revenue" value="1000"></input></td>
+					<td>/ month</td>
+				</tr>
+				<tr>
+					<td><label>B2B Revenue (Excluding VAT)</label></td>
+					<td>€</td>
+					<td><input type="text" name="b2b-revenue" value="0"></input></td>
+					<td>/ month</td>
+				</tr>
+				<tr>
+					<td><label>Expenses</label></td>
+					<td>€</td>
+					<td><input type="text" name="expenses" value="100"></input></td>
+					<td>/ month</td>
+				</tr>
+			</table>
+
+			<small>
+			* In the UK, if you are below the VAT threshold you don't need to charge VAT. In Spain, you always need to charge VAT. Since the consumer only cares about the total price, the burden of paying VAT falls on the business.
+			</small>
+		</div>
+
+		<div>
+			<h2>Monthly Results <small>(based on tax year 2014 - 2015)</small></h2>
+
+			<div class="error-message">
+			</div>
+
+			<table class="results">
+				<tr>
+					<th></th>
+					<th>UK Sole Trader</th>
+					<th>Spanish Autonomo</th>
+				</tr>
+				<tr>
+					<td>VAT</td>
+					<td class="gb-output-vat"></td>
+					<td class="es-output-vat"></td>
+				</tr>
+				<tr>
+					<td>Pre-tax profit (after VAT)</td>
+					<td class="gb-output-preTaxProfit"></td>
+					<td class="es-output-preTaxProfit"></td>
+				</tr>
+				<tr>
+					<td>Social Security / National Insurance</td>
+					<td class="gb-output-socialSecurity"></td>
+					<td class="es-output-socialSecurity"></td>
+				</tr>
+				<tr>
+					<td>Income Tax</td>
+					<td class="gb-output-incomeTax"></td>
+					<td class="es-output-incomeTax"></td>
+				</tr>
+				<tr>
+					<td>Total Deductions</td>
+					<td class="gb-output-totalDeductions"></td>
+					<td class="es-output-totalDeductions"></td>
+				</tr>
+				<tr>
+					<td>Net Profit</td>
+					<td class="gb-output-netProfit"></td>
+					<td class="es-output-netProfit"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="2">
+						<div class="callout compare-net-profit">
+							100% (€235) higher profit in the UK.
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="panel advancedConfig">
+			<h2>Configuration (yearly)</h2>
+			<p>Edit this to alter the rates for income tax, social security, VAT, and currency exchange.</p>
+
+			<table>
+				<tr>
+					<th></th>
+					<th colspan="3">UK Sole Trader</th>
+					<th colspan="3">Spanish Autonomo</th>
+				</tr>
+				<tr>
+					<td>VAT Threshold</td>
+					<td>£</td>
+					<td><input type="text" name="gb-vat-threshold" value="81000"></input></td>
+					<td></td>
+					<td>€</td>
+					<td><input type="text" name="es-vat-threshold" value="0"></input></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>VAT Rate</td>
+					<td></td>
+					<td><input type="text" name="gb-vat" value="20"></input></td>
+					<td>%</td>
+					<td></td>
+					<td><input type="text" name="es-vat" value="21"></input></td>
+					<td>%</td>
+				</tr>
+				<tr>
+					<td>Social Security (fixed)</td>
+					<td>£</td>
+					<td><input name="gb-social-security-fixed" value="143"></input></td>
+					<td>/ year</td>
+					<td>€</td>
+					<td><input name="es-social-security-fixed" value="3072"></input></td>
+					<td>/ year</td>
+				</tr>
+				<tr>
+					<td>Social Security Rates</td>
+					<td colspan="3">
+						<textarea rows="4" name="gb-social-security-rates">
+0      - 7956     : 0
+7956   - 41865    : 0.07
+41865  - 99999999 : 0.02
+						</textarea>
+					</td>
+					<td colspan="3">
+						<textarea rows="4" name="es-social-security-rates">
+0 - 99999999 : 0
+						</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>Social Security Is Tax Deductable Expense</td>
+					<td colspan="3">
+						<input type="checkbox" name="gb-social-security-is-expense"></input>
+					</td>
+					<td colspan="3">
+						<input type="checkbox" name="es-social-security-is-expense" checked></input>
+					</td>
+				</tr>
+				<tr>
+					<td>Tax-Free Allowance</td>
+					<td>£</td>
+					<td><input type="text" name="gb-tax-free-allowance" value="10000"></input></td>
+					<td>/ year</td>
+					<td>€</td>
+					<td><input type="text" name="es-tax-free-allowance" value="5151"></input></td>
+					<td>/ year</td>
+				</tr>
+				<tr>
+					<td>Income Tax Rates</td>
+					<td colspan="3">
+						<textarea rows="6" name="gb-tax-rates">
+0      - 31865     : 0.2
+31865  - 150000    : 0.4
+150000 - 999999999 : 0.45
+						</textarea>
+					</td>
+					<td colspan="3">
+						<textarea rows="6" name="es-tax-rates">
+0         - 17007.20  : 0.2475
+17007.20  - 33007.20  : 0.3
+33007.20  - 53407.20  : 0.4
+53407.20  - 120000.20 : 0.47
+120000.20 - 175000.20 : 0.50
+170000.20 - 300000.20 : 0.53
+300000.20 - 999999999 : 0.54
+						</textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>Exchange Rate</td>
+					<td colspan="6">
+						£1 = € <input type="text" name="eurosPerPound" value="1.26"></input>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<h2>Why did I make this?</h2>
+		<p>
+		I've driven myself crazy trying to figure out if I can become a Spanish resident and use my hard earned savings to bootstrap a small business without paying a prohibitive amount in taxes and social security. Spain is a great country to live but the tax system seems almost designed to discourage the starting of small online businesses such as mine. After reading countless online discussions I've realised this is common source of pain for both British and Spanish people considering seting up a company in Spain.
+		</p>
+		<p>
+		There are two main problems:
+		</p>
+		<ol>
+			<li>
+			Spain requires a minimum of about €250 / month social security payments every month. This isn't so bad once you are generating a reasonable profit, but if your revenues are small while starting up, which may take years, this could kill you. In contrast, the minimum National Insurance contribution in the UK is £2.75 / week (about €15 / month), and it's even possible to apply to be exempt from this, but that would affect your pension.
+			</li>
+			<li>
+			Spain requires you to charge VAT at 21% no matter how small your turnover is. In the UK, you don't have to charge VAT until your turnover reaches £81,000 (€102,000) per year. Technically the VAT is payed by the customer, but in reality, the customer is only aware of the final price, so the burden actually falls on the business to cover the cost of paying the VAT.
+			</li>
+		</ol>
+
+		<p>
+		These two problems conspire to make bootstrapped consumer businesses difficult to start in Spain. This calculator is designed to:
+		</p>
+		<ul>
+			<li>Compare tax in the UK and Spain for your current or projected revenue and expenses.</li>
+			<li>Show how hostile the Spanish tax system is to the early stages of bootstrapping. You need to make gross profits of €325 just to break even, compared to €15 in the UK.</li>
+			<li>Help to get the facts straight myself. I'm relying on savy readers to <a href="mailto:steveridout@gmail.com">please email me</a> if you spot any mistakes or areas that should be clarified.</li>
+		</ul>
+
+			<!--
+		<div class="panel">
+			<h2>Period</h2>
+
+			<label>Yearly <input type="radio" name="period" value="year" checked></input></label>
+			<label>Monthly <input type="radio" name="period" valud="month"></input></label>
+			
+			<h2>Currency</h2>
+
+			<label>Euro (€) <input type="radio" name="currency" value="euro" checked></input></label>
+			<label>Pound Sterling (£) <input type="radio" name="currency" value="pound"></input></label>
+			<label>US Dollar ($) <input type="radio" name="currency" value="dollar"></input></label>
+		</div>
+			-->
+
+
+		<h2>Caveats</h2>
+		<ul>
+			<li>
+			I am neither a lawyer nor an accountant so please don't treat this as professional advice. I offer no guarantees of its accuracy, but I want to improve it and will <a href="mailto:steveridout@gmail.com">gladly accept your corrections</a>. I'm an entrepreneur mainly focussed on making informed decisions for my own business. Please take professional advice before acting on anything you learn here.
+			</li>
+			<li>
+			Spanish income tax (IRPF) and social security (seguridad social) can vary slightly depending on the county (communidad autonoma), I've used <a href="http://en.wikipedia.org/wiki/Taxation_in_Spain#Determination_of_general_tax_payable">general rates on wikipedia</a>.
+			</li>
+			<li>
+			Spain offers discounts to social security payments of up to 80% for a limited period for people under 30 years old. (I'm too old to qualify.)
+			</li>
+			<li>
+			It's possible to use a limited company (sociedad limitada) instead of being a sole trader. This is more complicated but allows you to pay even fewer taxes in the UK. I'm not sure what difference it makes in Spain.
+			</li>
+			<li>
+			Spain has lower living costs than the UK. Property in London is particularly expensive to rent or buy.
+			</li>
+		</ul>
+
+		<div class="footer">
+			Created by <a href="http://steveridout.com">Steve Ridout</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-4601387-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	</body>
+</html>
+
