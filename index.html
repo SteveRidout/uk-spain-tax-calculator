@@ -37,7 +37,7 @@
 
 			<table>
 				<tr>
-					<td><label>B2C Revenue (Including VAT *)</label></td>
+					<td><label>B2C Revenue (Including VAT <sup>1</sup>)</label></td>
 					<td>€</td>
 					<td><input type="text" name="b2c-revenue" value="1000"></input></td>
 					<td>/ month</td>
@@ -57,7 +57,11 @@
 			</table>
 
 			<small>
-			* In the UK, if you are below the VAT threshold you don't need to charge VAT. In Spain, you always need to charge VAT. Since the consumer only cares about the total price, the burden of paying VAT falls on the business.
+				<ol>
+					<li>
+					In the UK, if you are below the VAT threshold you don't need to charge VAT. In Spain, you always need to charge VAT. Since the consumer only cares about the total price, the burden of paying VAT falls on the business.
+					</li>
+				</ol>
 			</small>
 		</div>
 
@@ -86,7 +90,13 @@
 				<tr>
 					<td>Social Security / National Insurance</td>
 					<td class="gb-output-socialSecurity"></td>
-					<td class="es-output-socialSecurity"></td>
+					<td>
+						<span class="bubble-container">
+							<span class="es-output-socialSecurity"></span>
+							<div class="bubble callout social-security-discount-hint">
+							</div>
+						</span>
+				   </td>
 				</tr>
 				<tr>
 					<td>Income Tax</td>
@@ -94,7 +104,7 @@
 					<td class="es-output-incomeTax"></td>
 				</tr>
 				<tr>
-					<td>Total Deductions</td>
+					<td>Total Deductions (including VAT)</td>
 					<td class="gb-output-totalDeductions"></td>
 					<td class="es-output-totalDeductions"></td>
 				</tr>
@@ -109,6 +119,24 @@
 						<div class="callout compare-net-profit">
 							100% (€235) higher profit in the UK.
 						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div>
+			<h2>First-Time Autonomo Discount</h2>
+
+			In Spain, <a href="http://www.infoautonomos.com/informacion-al-dia/seguridad-social/tarifa-plana-autonomos-50-euros-mayores-30-jovenes/">first time self employed can get a discount on social security payments</a> of 80% in the first 6 months, 50% in months 6 - 12, and 30% in months 12 - 18. Select your month range and see the effect on the results above.
+
+			<table>
+				<tr>
+					<td><label>Months self employed?</label></td>
+					<td class="ss-discount">
+						<label>&lt; 6<br><small>(80% off)</small> <input type="radio" name="es-ss-discount" value="80"></input></label>
+						<label>6 - 12<br><small>(50% off)</small> <input type="radio" name="es-ss-discount" value="50"></input></label>
+						<label>12 - 18<br><small>(30% off)</small> <input type="radio" name="es-ss-discount" value="30"></input></label>
+						<label>&gt; 18<br><small>(full)</small> <input type="radio" name="es-ss-discount" value="0" checked></input></label>
 					</td>
 				</tr>
 			</table>
@@ -224,7 +252,7 @@
 		<ol>
 			<li>
 			Spain requires a minimum of about €250 / month social security payments every month. This isn't so bad once you are generating a reasonable profit, but if your revenues are small while starting up, which may take years, this could kill your business.<br>
-			<small>In contrast, the minimum National Insurance contribution in the UK is only £2.75 / week (about €15 / month), and it's even possible to apply to be exempt from this if you don't earn much.</small>
+			<small>In contrast, the minimum National Insurance contribution in the UK is only £2.75 / week (about €15 / month), and it's even possible to exempt yourself from this if you don't earn much.</small>
 			</li>
 			<li>
 			Spain requires you to charge VAT at 21% no matter how small your turnover is. In the UK, you don't have to charge VAT until your turnover reaches £81,000 (€102,000) per year. Technically the VAT is payed by the customer, but in reality, the customer is only aware of the final price, so the burden actually falls on the business to cover the cost of paying the VAT.
@@ -258,13 +286,10 @@
 		<h2>Caveats</h2>
 		<ul>
 			<li>
-			I am neither a lawyer nor an accountant so please don't treat this as professional advice. I offer no guarantees of its accuracy, but I want to improve it and will <a href="mailto:steveridout@gmail.com">gladly accept your corrections</a>. I'm an entrepreneur mainly focussed on making informed decisions for my own business. Please take professional advice before acting on anything you learn here.
+			I am neither a lawyer nor an accountant so please don't treat this as professional advice. I offer no guarantees of its accuracy, but I want to improve it and will <a href="mailto:steveridout@gmail.com">gladly accept your corrections</a>. I'm an entrepreneur mainly focussed on making informed decisions for my own business.
 			</li>
 			<li>
-			Spanish income tax (IRPF) and social security (seguridad social) can vary slightly depending on the county (communidad autonoma), I've used <a href="http://en.wikipedia.org/wiki/Taxation_in_Spain#Determination_of_general_tax_payable">general rates on wikipedia</a>.
-			</li>
-			<li>
-			Spain offers discounts to social security payments of up to 80% for a limited period for people under 30 years old. (I'm too old to qualify.)
+			Spanish income tax (IRPF) and social security (seguridad social) can vary slightly depending on the county (communidad autonoma), I've used <a href="http://en.wikipedia.org/wiki/Taxation_in_Spain#Determination_of_general_tax_payable">general rates on wikipedia</a>. Feel free to edit the Configuration section above with figures appropriate to your location.
 			</li>
 			<li>
 			It's possible to use a limited company (sociedad limitada) instead of being a sole trader. This is more complicated but allows you to pay even fewer taxes in the UK. I'm not sure what difference it makes in Spain.

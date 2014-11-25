@@ -95,6 +95,9 @@ $(document).ready(function () {
 		countryInputs.gb.name = "the UK";
 		countryInputs.es.name = "Spain";
 
+		countryInputs.gb.socialSecurityDiscount = 0;
+		countryInputs.es.socialSecurityDiscount = $('input[name="es-ss-discount"]:checked').val();
+
 		xe.pounds = 1;
 		xe.euros = parseFloat($('input[name="eurosPerPound"]').val());
 	};
@@ -151,6 +154,8 @@ $(document).ready(function () {
 		// Social Security
 		var yearlySocialSecurity = country.socialSecurityFixed;
 		yearlySocialSecurity += applyRates(country.socialSecurityRates, yearlyPreTaxProfit);
+		yearlySocialSecurity *= (1 - country.socialSecurityDiscount / 100);
+
 		output.socialSecurity = yearlySocialSecurity / 12;
 
 		// Income Tax
@@ -181,7 +186,7 @@ $(document).ready(function () {
 
 	// Display a friendly message explaining how they'll be better off in one
 	// country or another
-	var displayBubble = function () {
+	var displayNetProfitHint = function () {
 		var betterCountry,
 			worseCountry,
 			difference,
@@ -218,6 +223,16 @@ $(document).ready(function () {
 		$('.compare-net-profit').text(message);
 	};
 
+	var displaySocialSecurityDiscountHint = function () {
+		if (countryInputs.es.socialSecurityDiscount > 0) {
+			$('.social-security-discount-hint')
+				.text('Includes ' + countryInputs.es.socialSecurityDiscount + '% reduction')
+				.show();
+		} else {
+			$('.social-security-discount-hint').hide();
+		}
+	};
+
 	var calculateEverything = function () {
 		clearError();
 
@@ -241,13 +256,13 @@ $(document).ready(function () {
 			});
 		});
 
-		displayBubble();
-
+		displayNetProfitHint();
+		displaySocialSecurityDiscountHint();
 	};
 
 	$('input').keyup(calculateEverything);
 	$('textarea').keyup(calculateEverything);
-	$('input[type="checkbox"]').change(calculateEverything);
+	$('input[type="checkbox"], input[type="radio"]').change(calculateEverything);
 
 	calculateEverything();
 });

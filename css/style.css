@@ -46,6 +46,14 @@ th {
 	position: relative;
 }
 
+.bubble {
+	position: absolute;
+	left: 150%;
+	top: -4px;
+	width: 200px;
+	font-size: 80%;
+}
+
 .callout {
 	border: 2px solid #dd8;
 	border-radius: 4px;
@@ -70,5 +78,16 @@ th {
 
 .social-button.facebook {
 	margin-top: 3px;
+}
+
+.ss-discount label {
+	display: inline-block;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.ss-discount input {
+	position: relative;
+	bottom: 10px;
+	vertical-align: top;
 }
 
