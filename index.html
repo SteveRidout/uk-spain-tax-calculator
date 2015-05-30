@@ -1,228 +1,239 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta http-equiv="Cache-Control" content="no-cache" />
-		<meta http-equiv="Cache-Control" content="no-store" />
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store" />
 
-		<title>Spanish Autonomo vs UK Sole Trader Tax Calculator</title>
+    <title>Spanish Autonomo vs UK Sole Trader Tax Calculator</title>
 
-		<link rel="stylesheet" type="text/css" href="./css/style.css?v2" />
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="./css/style.css?v2" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
-		<meta name="description" content="Tax calculator for self employed people in Spain and the UK. Find out which country offers the lowest tax burden for your business."/>
+    <meta name="description" content="Tax calculator for self employed people in Spain and the UK. Find out which country offers the lowest tax burden for your business."/>
 
-		<meta name="keywords" content="Spain, Spanish Tax, Autonomo Tax, UK Sole Trader Tax, UK Freelance Tax, VAT, IVA, IRPF, Income Tax, National Insurance, Social Security, Seguridad Social"/>
-		<meta name="author" content="Steve Ridout"/>
+    <meta name="keywords" content="Spain, Spanish Tax, Autonomo Tax, UK Sole Trader Tax, UK Freelance Tax, VAT, IVA, IRPF, Income Tax, National Insurance, Social Security, Seguridad Social"/>
+    <meta name="author" content="Steve Ridout"/>
 
-		<script type="text/javascript" src="./external/jquery-1.11.1.min.js"></script>
-		<script type="text/javascript" src="./external/underscore-min.js"></script>
-		<script type="text/javascript" src="./src/taxCalc.js?v2"></script>
-	</head>
-	<body>
-	<div class="outer-container">
-		<h1>
-			<small>Tax Calculator</small><br>
-			UK Sole Trader vs Spanish Autonomo
-		</h1>
-		<p>An online calculator to compare the tax burden of self employed people in the UK and Spain.</p>
+    <script type="text/javascript" src="./external/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="./external/underscore-min.js"></script>
+    <script type="text/javascript" src="./src/taxCalc.js?v2"></script>
+  </head>
+  <body>
+  <div class="outer-container">
+    <h1>
+      <small>Tax Calculator</small><br>
+      UK Sole Trader vs Spanish Autonomo
+    </h1>
+    <p>An online calculator to compare the tax burden of self employed people in the UK and Spain.</p>
 
-		<div class="callout">
-			<b>Please Help!</b> I'm not an expert and would like your help to ensure everything is accurate, please <a href="mailto:steveridout@gmail.com">email me</a> if you spot any problems or points that need clarifying.<br>
-			<small>If you're comfortable with javascript, feel free to <a href="https://github.com/SteveRidout/uk-spain-tax-calculator/blob/master/src/taxCalc.js">read the source code on GitHub</a></small>.
-		</div>
+    <div class="callout">
+      <b>Please Help!</b> I'm not an expert and would like your help to ensure everything is accurate, please <a href="mailto:steveridout@gmail.com">email me</a> if you spot any problems or points that need clarifying.<br>
+      <small>If you're comfortable with javascript, feel free to <a href="https://github.com/SteveRidout/uk-spain-tax-calculator/blob/master/src/taxCalc.js">read the source code on GitHub</a></small>.
+    </div>
 
-		<div class="panel">
-			<h2>Enter Your Business Details Here</h2>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Spain UK tax calculator responsive ad -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6097835562265916"
+         data-ad-slot="7930082184"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
-			<table>
-				<tr>
-					<td><label>B2C Revenue (Including VAT <sup>1</sup>)</label></td>
-					<td>€</td>
-					<td><input type="text" name="b2c-revenue" value="1000"></input></td>
-					<td>/ month</td>
-				</tr>
-				<tr>
-					<td><label>B2B Revenue (Excluding VAT)</label></td>
-					<td>€</td>
-					<td><input type="text" name="b2b-revenue" value="0"></input></td>
-					<td>/ month</td>
-				</tr>
-				<tr>
-					<td><label>Expenses</label></td>
-					<td>€</td>
-					<td><input type="text" name="expenses" value="100"></input></td>
-					<td>/ month</td>
-				</tr>
-			</table>
+    <div class="panel">
+      <h2>Enter Your Business Details Here</h2>
 
-			<small>
-				<ol>
-					<li>
-					In the UK, if you are below the VAT threshold you don't need to charge VAT. In Spain, you always need to charge VAT. Since the consumer only cares about the total price, the burden of paying VAT falls on the business.
-					</li>
-				</ol>
-			</small>
-		</div>
+      <table>
+        <tr>
+          <td><label>B2C Revenue (Including VAT <sup>1</sup>)</label></td>
+          <td>€</td>
+          <td><input type="text" name="b2c-revenue" value="1000"></input></td>
+          <td>/ month</td>
+        </tr>
+        <tr>
+          <td><label>B2B Revenue (Excluding VAT)</label></td>
+          <td>€</td>
+          <td><input type="text" name="b2b-revenue" value="0"></input></td>
+          <td>/ month</td>
+        </tr>
+        <tr>
+          <td><label>Expenses</label></td>
+          <td>€</td>
+          <td><input type="text" name="expenses" value="100"></input></td>
+          <td>/ month</td>
+        </tr>
+      </table>
 
-		<div>
-			<h2>Monthly Results <small>(based on tax year 2014 - 2015)</small></h2>
+      <small>
+        <ol>
+          <li>
+          In the UK, if you are below the VAT threshold you don't need to charge VAT. In Spain, you always need to charge VAT. Since the consumer only cares about the total price, the burden of paying VAT falls on the business.
+          </li>
+        </ol>
+      </small>
+    </div>
 
-			<div class="error-message">
-			</div>
+    <div>
+      <h2>Monthly Results <small>(based on tax year 2014 - 2015)</small></h2>
 
-			<table class="results">
-				<tr>
-					<th></th>
-					<th>UK Sole Trader</th>
-					<th>Spanish Autonomo</th>
-				</tr>
-				<tr>
-					<td>VAT</td>
-					<td class="gb-output-vat"></td>
-					<td class="es-output-vat"></td>
-				</tr>
-				<tr>
-					<td>Pre-tax profit (after VAT)</td>
-					<td class="gb-output-preTaxProfit"></td>
-					<td class="es-output-preTaxProfit"></td>
-				</tr>
-				<tr>
-					<td>Social Security / National Insurance</td>
-					<td class="gb-output-socialSecurity"></td>
-					<td>
-						<span class="bubble-container">
-							<span class="es-output-socialSecurity"></span>
-							<div class="bubble callout social-security-discount-hint">
-							</div>
-						</span>
-				   </td>
-				</tr>
-				<tr>
-					<td>Income Tax</td>
-					<td class="gb-output-incomeTax"></td>
-					<td class="es-output-incomeTax"></td>
-				</tr>
-				<tr>
-					<td>Total Deductions (including VAT)</td>
-					<td class="gb-output-totalDeductions"></td>
-					<td class="es-output-totalDeductions"></td>
-				</tr>
-				<tr>
-					<td>Net Profit</td>
-					<td class="gb-output-netProfit"></td>
-					<td class="es-output-netProfit"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td colspan="2">
-						<div class="callout compare-net-profit">
-							100% (€235) higher profit in the UK.
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
+      <div class="error-message">
+      </div>
 
-		<div>
-			<h2>First-Time Autonomo Discount</h2>
+      <table class="results">
+        <tr>
+          <th></th>
+          <th>UK Sole Trader</th>
+          <th>Spanish Autonomo</th>
+        </tr>
+        <tr>
+          <td>VAT</td>
+          <td class="gb-output-vat"></td>
+          <td class="es-output-vat"></td>
+        </tr>
+        <tr>
+          <td>Pre-tax profit (after VAT)</td>
+          <td class="gb-output-preTaxProfit"></td>
+          <td class="es-output-preTaxProfit"></td>
+        </tr>
+        <tr>
+          <td>Social Security / National Insurance</td>
+          <td class="gb-output-socialSecurity"></td>
+          <td>
+            <span class="bubble-container">
+              <span class="es-output-socialSecurity"></span>
+              <div class="bubble callout social-security-discount-hint">
+              </div>
+            </span>
+           </td>
+        </tr>
+        <tr>
+          <td>Income Tax</td>
+          <td class="gb-output-incomeTax"></td>
+          <td class="es-output-incomeTax"></td>
+        </tr>
+        <tr>
+          <td>Total Deductions (including VAT)</td>
+          <td class="gb-output-totalDeductions"></td>
+          <td class="es-output-totalDeductions"></td>
+        </tr>
+        <tr>
+          <td>Net Profit</td>
+          <td class="gb-output-netProfit"></td>
+          <td class="es-output-netProfit"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan="2">
+            <div class="callout compare-net-profit">
+              100% (€235) higher profit in the UK.
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
 
-			In Spain, <a href="http://www.infoautonomos.com/informacion-al-dia/seguridad-social/tarifa-plana-autonomos-50-euros-mayores-30-jovenes/">first time self employed can get a discount on social security payments</a> of 80% in the first 6 months, 50% in months 6 - 12, and 30% in months 12 - 18. Select your month range and see the effect on the results above.
+    <div>
+      <h2>First-Time Autonomo Discount</h2>
 
-			<table>
-				<tr>
-					<td><label>Months self employed</label></td>
-					<td class="ss-discount">
-						<label>&lt; 6<br><small>(80% off)</small> <input type="radio" name="es-ss-discount" value="80"></input></label>
-						<label>6 - 12<br><small>(50% off)</small> <input type="radio" name="es-ss-discount" value="50"></input></label>
-						<label>12 - 18<br><small>(30% off)</small> <input type="radio" name="es-ss-discount" value="30"></input></label>
-						<label>&gt; 18<br><small>(full)</small> <input type="radio" name="es-ss-discount" value="0" checked></input></label>
-					</td>
-				</tr>
-			</table>
-		</div>
+      In Spain, <a href="http://www.infoautonomos.com/informacion-al-dia/seguridad-social/tarifa-plana-autonomos-50-euros-mayores-30-jovenes/">first time self employed can get a discount on social security payments</a> of 80% in the first 6 months, 50% in months 6 - 12, and 30% in months 12 - 18. Select your month range and see the effect on the results above.
 
-		<div class="panel advancedConfig">
-			<h2>Configuration (yearly)</h2>
-			<p>Edit this to alter the rates for income tax, social security, VAT, and currency exchange.</p>
+      <table>
+        <tr>
+          <td><label>Months self employed</label></td>
+          <td class="ss-discount">
+            <label>&lt; 6<br><small>(80% off)</small> <input type="radio" name="es-ss-discount" value="80"></input></label>
+            <label>6 - 12<br><small>(50% off)</small> <input type="radio" name="es-ss-discount" value="50"></input></label>
+            <label>12 - 18<br><small>(30% off)</small> <input type="radio" name="es-ss-discount" value="30"></input></label>
+            <label>&gt; 18<br><small>(full)</small> <input type="radio" name="es-ss-discount" value="0" checked></input></label>
+          </td>
+        </tr>
+      </table>
+    </div>
 
-			<table>
-				<tr>
-					<th></th>
-					<th colspan="3">UK Sole Trader</th>
-					<th colspan="3">Spanish Autonomo</th>
-				</tr>
-				<tr>
-					<td>VAT Threshold</td>
-					<td>£</td>
-					<td><input type="text" name="gb-vat-threshold" value="81000"></input></td>
-					<td></td>
-					<td>€</td>
-					<td><input type="text" name="es-vat-threshold" value="0"></input></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>VAT Rate</td>
-					<td></td>
-					<td><input type="text" name="gb-vat" value="20"></input></td>
-					<td>%</td>
-					<td></td>
-					<td><input type="text" name="es-vat" value="21"></input></td>
-					<td>%</td>
-				</tr>
-				<tr>
-					<td>Social Security (fixed)</td>
-					<td>£</td>
-					<td><input name="gb-social-security-fixed" value="143"></input></td>
-					<td>/ year</td>
-					<td>€</td>
-					<td><input name="es-social-security-fixed" value="3072"></input></td>
-					<td>/ year</td>
-				</tr>
-				<tr>
-					<td>Social Security Rates</td>
-					<td colspan="3">
-						<textarea rows="4" name="gb-social-security-rates">
+    <div class="panel advancedConfig">
+      <h2>Configuration (yearly)</h2>
+      <p>Edit this to alter the rates for income tax, social security, VAT, and currency exchange.</p>
+
+      <table>
+        <tr>
+          <th></th>
+          <th colspan="3">UK Sole Trader</th>
+          <th colspan="3">Spanish Autonomo</th>
+        </tr>
+        <tr>
+          <td>VAT Threshold</td>
+          <td>£</td>
+          <td><input type="text" name="gb-vat-threshold" value="81000"></input></td>
+          <td></td>
+          <td>€</td>
+          <td><input type="text" name="es-vat-threshold" value="0"></input></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>VAT Rate</td>
+          <td></td>
+          <td><input type="text" name="gb-vat" value="20"></input></td>
+          <td>%</td>
+          <td></td>
+          <td><input type="text" name="es-vat" value="21"></input></td>
+          <td>%</td>
+        </tr>
+        <tr>
+          <td>Social Security (fixed)</td>
+          <td>£</td>
+          <td><input name="gb-social-security-fixed" value="143"></input></td>
+          <td>/ year</td>
+          <td>€</td>
+          <td><input name="es-social-security-fixed" value="3072"></input></td>
+          <td>/ year</td>
+        </tr>
+        <tr>
+          <td>Social Security Rates</td>
+          <td colspan="3">
+            <textarea rows="4" name="gb-social-security-rates">
 0      - 7956     : 0
 7956   - 41865    : 0.09
 41865  - 99999999 : 0.02
-						</textarea>
-					</td>
-					<td colspan="3">
-						<textarea rows="4" name="es-social-security-rates">
+            </textarea>
+          </td>
+          <td colspan="3">
+            <textarea rows="4" name="es-social-security-rates">
 0 - 99999999 : 0
-						</textarea>
-					</td>
-				</tr>
-				<tr>
-					<td>Social Security Is Tax Deductable Expense</td>
-					<td colspan="3">
-						<input type="checkbox" name="gb-social-security-is-expense"></input>
-					</td>
-					<td colspan="3">
-						<input type="checkbox" name="es-social-security-is-expense" checked></input>
-					</td>
-				</tr>
-				<tr>
-					<td>Tax-Free Allowance</td>
-					<td>£</td>
-					<td><input type="text" name="gb-tax-free-allowance" value="10000"></input></td>
-					<td>/ year</td>
-					<td>€</td>
-					<td><input type="text" name="es-tax-free-allowance" value="5151"></input></td>
-					<td>/ year</td>
-				</tr>
-				<tr>
-					<td>Income Tax Rates</td>
-					<td colspan="3">
-						<textarea rows="6" name="gb-tax-rates">
+            </textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Social Security Is Tax Deductable Expense</td>
+          <td colspan="3">
+            <input type="checkbox" name="gb-social-security-is-expense"></input>
+          </td>
+          <td colspan="3">
+            <input type="checkbox" name="es-social-security-is-expense" checked></input>
+          </td>
+        </tr>
+        <tr>
+          <td>Tax-Free Allowance</td>
+          <td>£</td>
+          <td><input type="text" name="gb-tax-free-allowance" value="10000"></input></td>
+          <td>/ year</td>
+          <td>€</td>
+          <td><input type="text" name="es-tax-free-allowance" value="5151"></input></td>
+          <td>/ year</td>
+        </tr>
+        <tr>
+          <td>Income Tax Rates</td>
+          <td colspan="3">
+            <textarea rows="6" name="gb-tax-rates">
 0      - 31865     : 0.2
 31865  - 150000    : 0.4
 150000 - 999999999 : 0.45
-						</textarea>
-					</td>
-					<td colspan="3">
-						<textarea rows="6" name="es-tax-rates">
+            </textarea>
+          </td>
+          <td colspan="3">
+            <textarea rows="6" name="es-tax-rates">
 0         - 17007.20  : 0.2475
 17007.20  - 33007.20  : 0.3
 33007.20  - 53407.20  : 0.4
@@ -230,135 +241,146 @@
 120000.20 - 175000.20 : 0.50
 170000.20 - 300000.20 : 0.53
 300000.20 - 999999999 : 0.54
-						</textarea>
-					</td>
-				</tr>
-				<tr>
-					<td>Exchange Rate</td>
-					<td colspan="6">
-						£1 = € <input type="text" name="eurosPerPound" value="1.26"></input>
-					</td>
-				</tr>
-			</table>
-		</div>
+            </textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Exchange Rate</td>
+          <td colspan="6">
+            £1 = € <input type="text" name="eurosPerPound" value="1.26"></input>
+          </td>
+        </tr>
+      </table>
+    </div>
 
-		<h2>Can I choose whether to pay taxes in either country?</h2>
+    <h2>Can I choose whether to pay taxes in either country?</h2>
 
-		Probably not. If you live and operate your company from either the UK or Spain for 183 days or more of the year, you are considered to be resident in that country and will need to pay taxes there.
+    Probably not. If you live and operate your company from either the UK or Spain for 183 days or more of the year, you are considered to be resident in that country and will need to pay taxes there.
 
-		If you don't stay for 183 days in any one country, you could check the <a href="http://www.hmrc.gov.uk/international/residence.htm#5">UK government guidelines</a> to figure out your situation.
+    If you don't stay for 183 days in any one country, you could check the <a href="http://www.hmrc.gov.uk/international/residence.htm#5">UK government guidelines</a> to figure out your situation.
 
-		<h2>Why did I make this?</h2>
-		<p>
-		I've driven myself crazy trying to figure out if I can become a Spanish resident and use my hard earned savings to bootstrap a small business without paying a prohibitive amount in taxes and social security. Spain is a great country to live but the tax system seems almost designed to discourage the starting of small businesses. After reading countless online discussions I've realised this is common source of pain for both British and Spanish people thinking of going into business in Spain.
-		</p>
-		<p>
-		There are two main problems:
-		</p>
-		<ol>
-			<li>
-			Spain requires a minimum of about €250 / month social security payments every month. This isn't so bad once you are generating a reasonable profit, but if your revenues are small while starting up, which may take years, this could kill your business.<br>
-			<small>In contrast, the minimum National Insurance contribution in the UK is only £2.75 / week (about €15 / month), and it's even possible to exempt yourself from this if you don't earn much.</small>
-			</li>
-			<li>
-			Spain requires you to charge VAT at 21% no matter how small your turnover is. In the UK, you don't have to charge VAT until your turnover reaches £81,000 (€102,000) per year. Technically the VAT is payed by the customer, but in reality, the customer is only aware of the final price, so the burden actually falls on the business to cover the cost of paying the VAT.
-			</li>
-		</ol>
+    <h2>Why did I make this?</h2>
+    <p>
+    I've driven myself crazy trying to figure out if I can become a Spanish resident and use my hard earned savings to bootstrap a small business without paying a prohibitive amount in taxes and social security. Spain is a great country to live but the tax system seems almost designed to discourage the starting of small businesses. After reading countless online discussions I've realised this is common source of pain for both British and Spanish people thinking of going into business in Spain.
+    </p>
+    <p>
+    There are two main problems:
+    </p>
+    <ol>
+      <li>
+      Spain requires a minimum of about €250 / month social security payments every month. This isn't so bad once you are generating a reasonable profit, but if your revenues are small while starting up, which may take years, this could kill your business.<br>
+      <small>In contrast, the minimum National Insurance contribution in the UK is only £2.75 / week (about €15 / month), and it's even possible to exempt yourself from this if you don't earn much.</small>
+      </li>
+      <li>
+      Spain requires you to charge VAT at 21% no matter how small your turnover is. In the UK, you don't have to charge VAT until your turnover reaches £81,000 (€102,000) per year. Technically the VAT is payed by the customer, but in reality, the customer is only aware of the final price, so the burden actually falls on the business to cover the cost of paying the VAT.
+      </li>
+    </ol>
 
-		<p>
-		These two problems conspire to make bootstrapped consumer businesses especially difficult to start in Spain. This calculator is designed to:
-		</p>
-		<ul>
-			<li>Compare tax in the UK and Spain for your current or projected revenue and expenses.</li>
-			<li>Show how hostile the Spanish tax system is to the early stages of bootstrapping. You need to make gross profits of €325 just to break even, compared to €15 in the UK.</li>
-			<li>Help to get the facts straight myself. I'm relying on savy readers to <a href="mailto:steveridout@gmail.com">please email me</a> if you spot any mistakes or areas that should be clarified.</li>
-		</ul>
+    <p>
+    These two problems conspire to make bootstrapped consumer businesses especially difficult to start in Spain. This calculator is designed to:
+    </p>
+    <ul>
+      <li>Compare tax in the UK and Spain for your current or projected revenue and expenses.</li>
+      <li>Show how hostile the Spanish tax system is to the early stages of bootstrapping. You need to make gross profits of €325 just to break even, compared to €15 in the UK.</li>
+      <li>Help to get the facts straight myself. I'm relying on savy readers to <a href="mailto:steveridout@gmail.com">please email me</a> if you spot any mistakes or areas that should be clarified.</li>
+    </ul>
 
-			<!--
-		<div class="panel">
-			<h2>Period</h2>
+      <!--
+    <div class="panel">
+      <h2>Period</h2>
 
-			<label>Yearly <input type="radio" name="period" value="year" checked></input></label>
-			<label>Monthly <input type="radio" name="period" valud="month"></input></label>
-			
-			<h2>Currency</h2>
+      <label>Yearly <input type="radio" name="period" value="year" checked></input></label>
+      <label>Monthly <input type="radio" name="period" valud="month"></input></label>
+      
+      <h2>Currency</h2>
 
-			<label>Euro (€) <input type="radio" name="currency" value="euro" checked></input></label>
-			<label>Pound Sterling (£) <input type="radio" name="currency" value="pound"></input></label>
-			<label>US Dollar ($) <input type="radio" name="currency" value="dollar"></input></label>
-		</div>
-			-->
+      <label>Euro (€) <input type="radio" name="currency" value="euro" checked></input></label>
+      <label>Pound Sterling (£) <input type="radio" name="currency" value="pound"></input></label>
+      <label>US Dollar ($) <input type="radio" name="currency" value="dollar"></input></label>
+    </div>
+      -->
 
-		<h2>UPDATE: New EU Laws Will Remove VAT Threshold</h2>
-		<p>
-		In January 2015, any sale to a customer in an EU country will need to pay VAT in that country, and you must register to pay VAT if you sell to other EU countries. To make this simpler, VAT MOSS (Mini One Stop Shops) are being set up which require you to 1. determine the permenent address of each of your EU customers and 2. register for VAT even if if you're below the threshold in the UK. Once registered, your business will need to charge VAT everywhere, even when selling within the UK. Alternatively, you can remain within the UK VAT threshold and simply refuse to sell to customers in other EU countries.
-		</p>
+    <h2>UPDATE: New EU Laws Will Remove VAT Threshold</h2>
+    <p>
+    In January 2015, any sale to a customer in an EU country will need to pay VAT in that country, and you must register to pay VAT if you sell to other EU countries. To make this simpler, VAT MOSS (Mini One Stop Shops) are being set up which require you to 1. determine the permenent address of each of your EU customers and 2. register for VAT even if if you're below the threshold in the UK. Once registered, your business will need to charge VAT everywhere, even when selling within the UK. Alternatively, you can remain within the UK VAT threshold and simply refuse to sell to customers in other EU countries.
+    </p>
 
-		Read more:
-		<ul>
-			<li><a href="https://www.gov.uk/government/publications/vat-supplying-digital-services-and-the-vat-mini-one-stop-shop/vat-supplying-digital-services-and-the-vat-mini-one-stop-shop">HMRC Guidance to new laws</a></li>
-			<li><a href="https://www.gov.uk/register-and-use-the-vat-mini-one-stop-shop">Register for VAT MOSS in UK</a></li>
-			<li><a href="https://www.change.org/p/vince-cable-mp-uphold-the-vat-exemption-threshold-for-businesses-supplying-digital-products">Change.org Petition To Keep VAT Threshold in UK</a></li>
-		</ul>
+    Read more:
+    <ul>
+      <li><a href="https://www.gov.uk/government/publications/vat-supplying-digital-services-and-the-vat-mini-one-stop-shop/vat-supplying-digital-services-and-the-vat-mini-one-stop-shop">HMRC Guidance to new laws</a></li>
+      <li><a href="https://www.gov.uk/register-and-use-the-vat-mini-one-stop-shop">Register for VAT MOSS in UK</a></li>
+      <li><a href="https://www.change.org/p/vince-cable-mp-uphold-the-vat-exemption-threshold-for-businesses-supplying-digital-products">Change.org Petition To Keep VAT Threshold in UK</a></li>
+    </ul>
 
-		<h2>Caveats</h2>
-		<ul>
-			<li>
-			I am neither a lawyer nor an accountant so please don't treat this as professional advice. I offer no guarantees of its accuracy, but I want to improve it and will <a href="mailto:steveridout@gmail.com">gladly accept your corrections</a>. I'm an entrepreneur mainly focussed on making informed decisions for my own business.
-			</li>
-			<li>
-			Spanish income tax (IRPF) and social security (seguridad social) can vary slightly depending on the county (communidad autonoma), I've used <a href="http://en.wikipedia.org/wiki/Taxation_in_Spain#Determination_of_general_tax_payable">general rates on wikipedia</a>. Feel free to edit the Configuration section above with figures appropriate to your location.
-			</li>
-			<li>
-			It's possible to use a limited company (sociedad limitada) instead of being a sole trader. This is more complicated but allows you to pay even fewer taxes in the UK. I'm not sure what difference it makes in Spain.
-			</li>
-			<li>
-			Spain has lower living costs than the UK. Property in London is particularly expensive to rent or buy.
-			</li>
-		</ul>
+    <h2>Caveats</h2>
+    <ul>
+      <li>
+      I am neither a lawyer nor an accountant so please don't treat this as professional advice. I offer no guarantees of its accuracy, but I want to improve it and will <a href="mailto:steveridout@gmail.com">gladly accept your corrections</a>. I'm an entrepreneur mainly focussed on making informed decisions for my own business.
+      </li>
+      <li>
+      Spanish income tax (IRPF) and social security (seguridad social) can vary slightly depending on the county (communidad autonoma), I've used <a href="http://en.wikipedia.org/wiki/Taxation_in_Spain#Determination_of_general_tax_payable">general rates on wikipedia</a>. Feel free to edit the Configuration section above with figures appropriate to your location.
+      </li>
+      <li>
+      It's possible to use a limited company (sociedad limitada) instead of being a sole trader. This is more complicated but allows you to pay even fewer taxes in the UK. I'm not sure what difference it makes in Spain.
+      </li>
+      <li>
+      Spain has lower living costs than the UK. Property in London is particularly expensive to rent or buy.
+      </li>
+    </ul>
 
-		<div>
-			<a href="https://twitter.com/share" class="twitter-share-button social-button" data-url="http://steveridout.com/uk-spain-tax-calculator/" data-text="Compare taxes for self employed in UK and Spain" data-count="none">Tweet</a>
-			<div class="social-button facebook">
-				<div class="fb-share-button" data-href="http://steveridout.com/uk-spain-tax-calculator/" data-type="button"></div>
-			</div>
-			<div class="social-button">
-				<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-				<g:plusone size="medium" count="false" href="http://steveridout.com/uk-spain-tax-calculator/"></g:plusone>			
-			</div>
-		</div>
+    <div>
+      <a href="https://twitter.com/share" class="twitter-share-button social-button" data-url="http://steveridout.com/uk-spain-tax-calculator/" data-text="Compare taxes for self employed in UK and Spain" data-count="none">Tweet</a>
+      <div class="social-button facebook">
+        <div class="fb-share-button" data-href="http://steveridout.com/uk-spain-tax-calculator/" data-type="button"></div>
+      </div>
+      <div class="social-button">
+        <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+        <g:plusone size="medium" count="false" href="http://steveridout.com/uk-spain-tax-calculator/"></g:plusone>      
+      </div>
+    </div>
 
-		<div class="footer">
-			Created by <a href="http://steveridout.com">Steve Ridout</a>
-		</div>
-	</div>
-	<a href="https://github.com/SteveRidout/uk-spain-tax-calculator"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Footer responsive ad -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6097835562265916"
+         data-ad-slot="1883548588"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
-	<!-- Twitter code -->
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <div class="footer">
+      Created by <a href="http://steveridout.com">Steve Ridout</a>
+    </div>
+  </div>
+  <a href="https://github.com/SteveRidout/uk-spain-tax-calculator"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
 
-	<!-- Facebook code -->
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+  <!-- Twitter code -->
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<!-- Google Analytics code -->
-	<script type="text/javascript">
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-4601387-1']);
-	  _gaq.push(['_trackPageview']);
+  <!-- Facebook code -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-	</script>
-	</body>
+  <!-- Google Analytics code -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-4601387-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  </body>
 </html>
 
